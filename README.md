@@ -1,6 +1,6 @@
-# sms-horizon-node
+# node-sms-horizon
 
-Send SMS using sms-horizon in node Environment.
+Send SMS using SMS Horizon gateway in node Environment.
 
 ## Getting Started
 
@@ -25,8 +25,9 @@ npm install --save node-sms-horizon
 node-sms-horizon send_sms(senderOption, recieverOption)
 needs two parameters 'senderOption' and 'recieverOption'.
 ```
-structure of those parameters:
+var send_sms = require("node-sms-horizon");
 
+structure of those parameters:
 
 senderOption= {
 user_name : // Use your User name from sms-horizon. 

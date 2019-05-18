@@ -1,13 +1,17 @@
 {
   "name": "node-sms-horizon",
-  "version": "1.0.3",
-  "description": "Send SMS using sms-horizon in node environment.",
+  "version": "1.0.8",
+  "description": "Send SMS using SMS Horizon gateway in node environment.",
   "main": "index.js",
   "scripts": {
     "test": "npm send-sms"
   },
   "keywords": [
-    "sms-hoirzon",
+    "node-sms-horizon",
+    "npm sms-horizon",
+    "node sms horizon",
+    "sms horizon node",
+    "sms-horizon",
     "smsHoirzon",
     "SMS-horizon"
   ],

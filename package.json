@@ -1,0 +1,19 @@
+{
+  "name": "node-sms-horizon",
+  "version": "1.0.3",
+  "description": "Send SMS using sms-horizon in node environment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm send-sms"
+  },
+  "keywords": [
+    "sms-hoirzon",
+    "smsHoirzon",
+    "SMS-horizon"
+  ],
+  "author": "Subha Chandra Das <gangulysubho5@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

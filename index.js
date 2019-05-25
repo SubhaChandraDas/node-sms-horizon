@@ -11,9 +11,17 @@ function send_sms(senderOption,recieverOption){
     url +=`user=${user}&apikey=${apikey}&mobile=${phoneNo}&message=${text}&senderid=${senderid}&type=txt`
     
     url = 'http://smshorizon.co.in/api/sendsms.php' + '?' + encodeURI(url);
-    axios.get(url)
-        .then(response => {
-            console.log(response);
-        });
+    return new Promise(function(resolve, reject) {
+        axios({
+            method: 'get',
+            url: url,
+        }).then(response => {
+                console.log(response)
+                resolve(response);
+        }).catch(error => {
+                console.error('error',error);
+                reject(error);
+        })
+   })
 }
 module.exports = send_sms;

@@ -22,7 +22,7 @@ npm install --save node-sms-horizon
 
 ## Usage
 
-node-sms-horizon send_sms(senderOption, recieverOption)
+node-sms-horizon send_sms(senderOption, recieverOption) returns promise and
 needs two parameters 'senderOption' and 'recieverOption'.
 ```
 var send_sms = require("node-sms-horizon");
@@ -40,14 +40,26 @@ phone_no: // reciever phone number;
 text: // sms content
 }
 
-then just pass those parameters in as send_sms(senderOption, recieverOption);
+then just pass those parameters in as send_sms(senderOption, recieverOption).
+
+Example:
+
+let send_sms = requrire('node-sms-horizon');
+let sent     = send_sms(senderOption, recieverOption);
+
+sent.then(response => {
+    console.log(response)
+}).catch(error => {
+    console.error(error)
+})
+
 ```
 
 ## Authors
 
-* **Subha Chandra Das** - *Initial work* - [SubhaChandraDas](https://github.com/SubhaChandraDas)
+* **Subha Chandra Das** - [SubhaChandraDas](https://github.com/SubhaChandraDas)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 

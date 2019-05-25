@@ -1,6 +1,6 @@
 {
   "name": "node-sms-horizon",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "Send SMS using SMS Horizon gateway in node environment.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "SMS-horizon"
   ],
   "author": "Subha Chandra Das <gangulysubho5@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0"
   }

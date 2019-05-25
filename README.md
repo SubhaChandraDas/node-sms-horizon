@@ -24,7 +24,7 @@ npm install --save node-sms-horizon
 
 node-sms-horizon send_sms(senderOption, recieverOption) returns promise and
 needs two parameters 'senderOption' and 'recieverOption'.
-```
+```javascript
 var send_sms = require("node-sms-horizon");
 
 structure of those parameters:

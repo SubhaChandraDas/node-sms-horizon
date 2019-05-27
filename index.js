@@ -1,27 +1,20 @@
-var axios = require('axios');
+const fetch = require('node-fetch');
 
-function send_sms(senderOption,recieverOption){
-    let url = '';
-    let user = senderOption.user_name;
-    let apikey = senderOption.api_key;
-    let senderid = senderOption.sender_id;
-    let phoneNo = recieverOption.phone_no;
-    let text    = recieverOption.text;
+module.exports = function(config){
 
-    url +=`user=${user}&apikey=${apikey}&mobile=${phoneNo}&message=${text}&senderid=${senderid}&type=txt`
+    const { user_name, api_key, sender_id } = config
+
+   // closure to access the config
+    return function(phone_no, text){
     
-    url = 'http://smshorizon.co.in/api/sendsms.php' + '?' + encodeURI(url);
-    return new Promise(function(resolve, reject) {
-        axios({
-            method: 'get',
-            url: url,
-        }).then(response => {
-                console.log(response)
-                resolve(response);
-        }).catch(error => {
-                console.error('error',error);
-                reject(error);
-        })
-   })
-}
-module.exports = send_sms;
+        let url =`user=${user_name}&apikey=${api_key}&mobile=${phone_no}&message=${text}&senderid=${sender_id}&type=txt`
+        
+        url = 'http://smshorizon.co.in/api/sendsms.php' + '?' + encodeURI(url);
+
+        return fetch(url)
+        .then(res => res.json())
+        .then(body => body)
+        .catch(err => err)
+
+    }
+};

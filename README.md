@@ -25,29 +25,14 @@ npm install --save node-sms-horizon
 node-sms-horizon send_sms(senderOption, recieverOption) returns promise and
 needs two parameters 'senderOption' and 'recieverOption'.
 ```javascript
-var send_sms = require("node-sms-horizon");
 
-structure of those parameters:
+const send = require("node-sms-horizon")({
+    user_name : // Use your User name from sms-horizon. 
+    api_key : // You will get this api key after registration. 
+    sender_id : //you have to create a sender Id in you sms-horizon portal. 
+});
 
-senderOption= {
-user_name : // Use your User name from sms-horizon. 
-api_key : // You will get this api key after registration. 
-sender_id : //you have to create a sender Id in you sms-horizon portal. 
-};
-
-recieverOption= {
-phone_no: // reciever phone number;
-text: // sms content
-}
-
-then just pass those parameters in as send_sms(senderOption, recieverOption).
-
-Example:
-
-let send_sms = requrire('node-sms-horizon');
-let sent     = send_sms(senderOption, recieverOption);
-
-sent.then(response => {
+send('receiver phone no.',"message to send").then(response => {
     console.log(response)
 }).catch(error => {
     console.error(error)

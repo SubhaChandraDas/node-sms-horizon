@@ -4,7 +4,7 @@
   "description": "Send SMS using SMS Horizon gateway in node environment.",
   "main": "index.js",
   "scripts": {
-    "test": "npm send-sms"
+    "test": "node test/index.js"
   },
   "keywords": [
     "node-sms-horizon",
@@ -16,12 +16,12 @@
     "SMS-horizon"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/SubhaChandraDas/node-sms-horizon"
+    "type": "git",
+    "url": "https://github.com/SubhaChandraDas/node-sms-horizon"
   },
   "author": "Subha Chandra Das <gangulysubho5@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0"
+    "node-fetch": "^2.6.0"
   }
 }
